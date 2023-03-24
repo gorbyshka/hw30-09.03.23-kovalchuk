@@ -1,54 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
-class Icons extends React.Component {
-    constructor(props) {
-        super(props)
+function Icons(props) {
+    const [getId, setId] = useState(false);
 
-        this.state = {
-            id: false
-        };
-
-        this.fillBackground = this.fillBackground.bind(this);
-
+    function fillBackground() {
+        setId((prevId) => !prevId);
     }
 
-    fillBackground() {
-        this.setState(state => ({
-            id: !state.id
-        }));
-    }
-
-    render() {
-        if (this.state.id) {
-            return (
-
-                <div className="block-icons">
-
-                    <a href="#">
-                        <span onClick={this.fillBackground} id="heart" class="material-symbols-outlined">favorite</span>
-                    </a>
-                    <a href="#">
-                        <span id="move" class="material-symbols-outlined">move_up</span>
-                    </a>
-
-                </div>
-            );
-        } else {
-            return (
-
-                <div className="block-icons">
-
-                    <a href="#">
-                        <span onClick={this.fillBackground} id="heart2" class="material-symbols-outlined">favorite</span>
-                    </a>
-                    <a href="#">
-                        <span id="move" class="material-symbols-outlined">move_up</span>
-                    </a>
-
-                </div>
-            );
-        }
-    }
+    return (
+        <div className="block-icons">
+            <a href="#">
+                <span
+                    onClick={fillBackground}
+                    id={getId ? "heart" : "heart2"}
+                    className="material-symbols-outlined"
+                >
+                    favorite
+                </span>
+            </a>
+            <span className="material-symbols-outlined">move_up</span>
+        </div>
+    );
 }
 
-export default Icons
+export default Icons;

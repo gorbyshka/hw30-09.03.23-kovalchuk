@@ -28,7 +28,7 @@ const Main = () => {
 
             <div className='card-discount'>
 
-                <Image image={discount} />
+                <Image  image={discount} />
 
             </div>
 

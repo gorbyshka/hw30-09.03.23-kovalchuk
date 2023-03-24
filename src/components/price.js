@@ -1,50 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-class Price extends React.Component {
-    constructor(props) {
-        super(props)
+function Price(props) {
+  const [getId, setId] = useState(false);
 
-        this.state = {
-            id: false
-        };
+  function fillBackground() {
+    setId((prevId) => !prevId);
+  }
 
-        this.fillBackground = this.fillBackground.bind(this);
-
-    }
-
-    fillBackground() {
-        this.setState(state => ({
-            id: !state.id
-        }));
-    }
-
-    render() {
-        if (this.state.id) {
-            return (
-                <>
-                    <small className="price-one"><s>{this.props.name}</s></small>
-                    <div className="price">
-                        <h2>{this.props.name2}</h2>
-                        <a href="#" id="cart" onClick={this.fillBackground}>
-                            <span class="material-symbols-outlined">shopping_cart</span>
-                        </a>
-                    </div>
-                </>
-            );
-        } else {
-            return (
-                <>
-                    <small className="price-one"><s>{this.props.name}</s></small>
-                    <div className="price">
-                        <h2>{this.props.name2}</h2>
-                        <a href="#" id="cart2" onClick={this.fillBackground}>
-                            <span class="material-symbols-outlined">shopping_cart</span>
-                        </a>
-                    </div>
-                </>
-            );
-        }
-    }
+  return (
+    <>
+      <small className="price-one">
+        <s>{props.name}</s>
+      </small>
+      <div className="price">
+        {getId ? <h5>{props.name2}</h5> : <h5>{props.name2}</h5>}
+        <a href="#" id={getId ? "cart" : "cart2"} onClick={fillBackground}>
+          <span className="material-symbols-outlined">shopping_cart</span>
+        </a>
+      </div>
+    </>
+  );
 }
 
-export default Price
+export default Price;
