@@ -14,14 +14,14 @@ const Rating = (props) => {
     }
 
     return (
-        <>
+        <div className="card-rating">
             <a href="#">
                 {stars}
             </a>
             <a href="#" className="coments">
                 <small>{props.title}</small>
             </a>
-        </>
+        </div>
     )
 }
 

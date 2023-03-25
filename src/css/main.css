@@ -1,42 +1,37 @@
 body {
     font-family: 'Arial';
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
     width: 250px;
-    height: 500px;
-    margin-left: 200px;
-    margin-top: 40px;
-}
-
-.top-sells {
-    color: white;
-    text-transform: uppercase;
-    font-size: 9px;
-    margin-left: 10px;
-    width: 80px;
-    margin-top: 15px;
-}
-
-.back-sells {
-    height: 40px;
-    width: 90px;
-    background-color: orange;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    margin-left: 23px;
+    margin-left: 100px;
 }
 
 .card-item {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
-.block-icons {
+.card-body {
     display: flex;
-    margin-left: 100px;
+    flex-wrap: wrap;
+}
+
+.block-icons{
+    display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #heart {
@@ -47,65 +42,56 @@ body {
     color: orange;
 }
 
-#move {
-    color: gray;
-    margin-top: 10px;
-}
-
-.card-discount {
-    margin-top: 30px;
-}
-
 .card-sell {
-    width: 100px;
+    flex: 1 0 214px;
+    padding: 10px;
 }
 
-#star {
-    color: yellow;
+.card-details {
+    flex: 2 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-.coments {
-    margin-left: 15px;
-    text-decoration: none;
-    color: gray;
+.card-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -40px;
 }
 
-.price-one {
-    color: gray;
+.sends{
+    margin-bottom: 800px;
+    margin-top: -20px;
 }
 
 .card-price {
-    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.price {
+.back-sells{
+    width: 100px;
+    text-align: center;
+    background-color: orange;
+    border-radius: 15px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+.card-discount {
     display: flex;
-    color: red;
-    width: 150%;
-}
-
-#cart {
-    color: rgb(42, 157, 42);
-    margin-left: 165px;
-}
-
-#cart2 {
-    color: rgb(101, 255, 101);
-    margin-left: 165px;
-}
-
-.send-name {
-    color: rgb(42, 157, 42);
-}
-
-.sends {
-    display: flex;
-}
-
-#car {
-    margin-left: 20px;
-    margin-bottom: 20px;
-    color: rgb(42, 157, 42);
+    justify-content: center;
+    align-items: center;
+    color: #e40046;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    height: 50px;
+    padding: 10px;
 }
 
 .card-sell img {
@@ -113,7 +99,47 @@ body {
     height: 160px;
 }
 
+.coments {
+    text-decoration: none;
+    color: gray;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.price {
+    display: flex;
+    color: red;
+    width: 300px;
+}
+
+#star {
+    color: yellow;
+}
+
+#cart {
+    color: rgb(42, 157, 42);
+    margin-left: 140px;
+}
+
+#cart2 {
+    color: rgb(101, 255, 101);
+    margin-left: 140px;
+}
+
+
+#car {
+    margin-left: 20px;
+    color: rgb(42, 157, 42);
+    margin-top: -300px;
+}
+
+.card-rating{
+    display: flex;
+}
+
 .card-discount img {
     width: 54px;
     height: 54px;
+    margin-right: 130px;
+    margin-bottom: 110px;
 }
